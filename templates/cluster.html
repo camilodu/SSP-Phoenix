@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cluster</title>
+
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/prism-bootstrap.css') }}" rel="stylesheet" type="text/css">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <style>
+      h2 {
+        color: #000;
+        text-transform: uppercase;
+        font-size: 55px;
+        font-weight: 100;
+        letter-spacing: 10px;
+        text-shadow: 3px 3px 5px #fff;
+        }
+        #vmname tr {
+          color: #fff;
+
+        }
+        #storagecontainer p {
+          color: #fff;
+
+        }
+        #vmnipaddress tr {
+          margin: 5px 0;
+          margin-top: 0px;
+          margin-left: 150px;
+          color: #fff;
+        }
+        </style>
+  </head>
+
+  <body>
+    {% extends "layout.html" %}
+    {% block content %}
+    <div class="cluster">
+      <h2>ClUSTER SUMMARY</h2>
+
+    <div id="vmname">
+      <table>
+        <tr>
+          <td>VM Name</td>
+          <td>IP Address</td>
+        </tr>
+        {% for vm in vms %}
+        <tr>
+        <td>{{ vm.name }}</td>
+        <td>{{ vm.get_ips().0 }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+        </div>
+        <h2>CONTAINERS</h2>
+
+        <div id="storagecontainer">
+            {% for container in storagecont %}
+            <p>{{ container.name }}</p>
+            {% endfor %}
+
+            </div>
+        {% endblock %}
+
+</html>

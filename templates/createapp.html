@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CreateApp</title>
+
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/prism-bootstrap.css') }}" rel="stylesheet" type="text/css">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <style>
+    body {
+      font: 300 15px/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #333;
+      margin: 20px;
+    }
+    #formsx form
+    {
+
+      display: inline-block;
+    }
+    #app
+    {
+      color: white;
+      background-color: black;
+      margin-top: 20px;
+      width: 400px;
+      height: 100px;
+      display: inline-block;
+      font-size: 28px;
+    }
+    #db
+    {
+      color: white;
+      background-color: red;
+      margin-top: 20px;
+      width: 400px;
+      height: 100px;
+      display: inline-block;
+      font-size: 28px;
+    }
+    #scale
+    {
+      color: white;
+      background-color: blue;
+      margin-top: 20px;
+      width: 400px;
+      height: 100px;
+      display: inline-block;
+      font-size: 28px;
+    }
+    #sec
+    {
+      color: white;
+      background-color: green;
+      margin-top: 20px;
+      width: 400px;
+      height: 100px;
+      display: inline-block;
+      font-size: 28px;
+    }
+
+    h1 {
+      margin-top:-80px;
+      margin-left: 300px;
+      margin-bottom: 150px;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 40px;
+      font-weight: 150;
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 5px #000;
+    }
+
+      h2 {
+        color: #000;
+        text-transform: uppercase;
+        font-size: 55px;
+        font-weight: 100;
+        letter-spacing: 10px;
+        text-shadow: 3px 3px 5px #fff;
+        }
+        p
+        {
+          color: #fff;
+        }
+        </style>
+  </head>
+  <!-- Logo
+================================================== -->
+<div class="n-header-logo">
+  <a class="n-logo-link"><img src="https://d31dn7nfpuwjnm.cloudfront.net/images/valoraciones/0023/2978/banco_bancolombia_foro.png?1460980083"width="160" height="80"></a>
+  <a class="n-logo-link"><img src="https://www.nutanix.com/wp-content/uploads/2016/11/logo_xpowered-150x150.png"width="120" height="120"></a>
+</div>
+<div id="formx">
+    <h1 class="logo">BANCOLOMBIA - SELF SERVICE PORTAL</h1>
+
+  <body>
+      <h6><a href="http://localhost:5000/">Home</a></h6>
+      <h6><a href="http://localhost:5000/createapp/">Calm</a></h6>
+
+      <h4>Let's deploy an app with Calm</h4>
+      
+      <form action="/appdeploy/" method="post" role="form">
+        <input type="hidden" name="blueprint_name" value="Calm Orchestration and App Deploy">
+        <input type="hidden" name="team_name" value="Administrator Team">
+        <input type="hidden" name="application_name" value="Team 19 App">
+        <button type="submit" id="app" class="btn btn-success">APP DEPLOY</button>
+      </form>
+      <form action="/dbdeploy/" method="post" role="form">
+        <input type="hidden" name="blueprint_name" value="DB and App Package Updates">
+        <input type="hidden" name="team_name" value="Administrator Team">
+        <input type="hidden" name="application_name" value="Team 19 DBs">
+        <button type="submit" id="db" class="btn btn-success">DB and Package Updates</button>
+      </form>
+      <form action="/scaledeploy/" method="post" role="form">
+        <input type="hidden" name="blueprint_name" value="Scale Webservers Array">
+        <input type="hidden" name="team_name" value="Administrator Team">
+        <input type="hidden" name="application_name" value="Scale Webservers">
+        <button type="submit" id="scale" class="btn btn-success">Scale Webservers</button>
+      </form>
+      <form action="/secpatch/" method="post" role="form">
+        <input type="hidden" name="blueprint_name" value="DB and App Sec Patch">
+        <input type="hidden" name="team_name" value="Administrator Team">
+        <input type="hidden" name="application_name" value="Security Patch">
+        <button type="submit" id="sec" class="btn btn-success">Security Patch</button>
+      </form>
+
+</div>
+<h2>{{ response }}</h2>
+  </body>
+</html>

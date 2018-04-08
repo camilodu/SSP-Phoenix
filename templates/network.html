@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network</title>
+
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/prism-bootstrap.css') }}" rel="stylesheet" type="text/css">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <style>
+      h2 {
+        color: #000;
+        text-transform: uppercase;
+        font-size: 55px;
+        font-weight: 100;
+        letter-spacing: 10px;
+        text-shadow: 3px 3px 5px #fff;
+        }
+        p
+        {
+          color: #fff;
+        }
+        </style>
+  </head>
+
+  <body>
+    {% extends "layout.html" %}
+    {% block content %}
+    <div class="network">
+      <h2>Create VLAN</h2>
+      <div class="form-group">
+        <label for="vlan_name">VLAN NAME:</label>
+        <input type="text" class="form-control" id="vlan_name" name="vlan_name" placeholder="Type VLAN Name">
+        <br>
+        <label for="vlan_id">VLAN ID:</label>
+        <input type="text" class="form-control" id="vlan_id" name="vlan_id" placeholder="Type VLAN ID">
+        <br>
+
+      </div>
+      <button type="submit" class="btn btn-success">CREATE VLAN</button>
+
+
+
+
+    </div>
+    {% endblock %}
+  </body>
+</html>
